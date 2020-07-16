@@ -1,0 +1,7 @@
+easy 	- hack in to Rust
+medium	- hack in to CS GO
+hard	- hack in to Overwatch
+
+- bow, walls, house, wood, fire
+- sniper, pistol, granade, terrorist, assault
+- objective, payload, widowmaker, baptiste, ultimate
