@@ -93,8 +93,7 @@ public class Hacker : MonoBehaviour
     {
         if (input == password)
             {
-                Terminal.WriteLine("Welcome President Jake!");
-                Terminal.WriteLine("Here are 5 Schmeckles!");
+                DisplayWinScreen();           
             }
         else if (input == "69")
             {
@@ -106,6 +105,41 @@ public class Hacker : MonoBehaviour
                 Terminal.WriteLine("No Schmeckles for you!");
             }
     }
- 
+    void DisplayWinScreen()
+    {
+        currentScreen = Screen.Win;
+        Terminal.ClearScreen();
+        ShowLevelReward();
+    }
+    void ShowLevelReward()
+    {
+        switch (level)
+        {
+            case 1:
+             Terminal.WriteLine("Welcome President Jake!");
+             Terminal.WriteLine("Here are ");
+             Terminal.WriteLine(@"
+      _______________
+    |$$$$|     |$$$$|
+    |$$$$|     |$$$$|
+    |$$$$|     |$$$$|
+    \$$$$|     |$$$$/
+     \$$$|     |$$$/
+      `$$|_____|$$'
+           (O)
+        .-'''''-.
+      .'  * * *  `.
+     :  *   5    *  :
+    : ~ Shmeckles ~ :
+    : ~  $$$$$$$  ~ :
+     :  *  $$$  *  :
+      `.  * * *  .'
+        `-.....-'                                           
+  "                        
+            );
+            break;
+        }
+       
+    }
 }
 
