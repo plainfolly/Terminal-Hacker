@@ -3,7 +3,7 @@
 public class Hacker : MonoBehaviour
 {   // Game configuration data
     string[] level1Passwords = { "bow", "beach", "house", "rock", "fire", "naked"};
-    string[] level2Passwords = {"sniper", "pistol", "granade", "terrorist", "assault"};
+    string[] level2Passwords = {"sniper", "pistol", "grenade", "terrorist", "assault"};
     string[] level3Passwords = {"objective", "payload", "widowmaker", "rocketbarrage", "ultimate"};
 
     // "int level" = State of the Game, f.ex. lvl 1. Its a member variable because not declared in the Method itself, but above
@@ -178,8 +178,6 @@ public class Hacker : MonoBehaviour
         `-.....-'   
         
        ~ Victory! ~
-             .
-             .
              .
  Go back to 'Menu' or type 'exit' to leave the game!
 
