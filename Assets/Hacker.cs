@@ -38,6 +38,10 @@ public class Hacker : MonoBehaviour
         {
         ShowMainMenu("Hello Jake");
         }
+        else if (input == "quit" || input == "exit" || input == "close")
+        {
+            Application.Quit();
+        }
         else if (currentScreen == Screen.MainMenu)
         {
             RunMainMenu(input);
@@ -177,7 +181,7 @@ public class Hacker : MonoBehaviour
              .
              .
              .
-    Go back to Menu!
+ Go back to 'Menu' or type 'exit' to leave the game!
 
         " 
          );
