@@ -2,9 +2,9 @@
 
 public class Hacker : MonoBehaviour
 {   // Game configuration data
-    string[] level1Passwords = { "bow", "walls", "house", "wood", "fire", "naked"};
+    string[] level1Passwords = { "bow", "beach", "house", "rock", "fire", "naked"};
     string[] level2Passwords = {"sniper", "pistol", "granade", "terrorist", "assault"};
-    string[] level3Passwords = {"objective", "payload", "widowmaker", "baptiste", "ultimate"};
+    string[] level3Passwords = {"objective", "payload", "widowmaker", "rocketbarrage", "ultimate"};
 
     // "int level" = State of the Game, f.ex. lvl 1. Its a member variable because not declared in the Method itself, but above
     int level;
@@ -27,11 +27,10 @@ public class Hacker : MonoBehaviour
         currentScreen = Screen.MainMenu;
         Terminal.ClearScreen();
         Terminal.WriteLine(greeting);
-        Terminal.WriteLine("What would you like to Hack into?");
+        Terminal.WriteLine("Where would you like to hack into?");
         Terminal.WriteLine("Press 1 for RUST");
-        Terminal.WriteLine("Press 2 for CS GO");
+        Terminal.WriteLine("Press 2 for COUNTERSTRIKE");
         Terminal.WriteLine("Press 3 for OVERWATCH");
-        Terminal.WriteLine("Enter your selection: ");
     }
     void OnUserInput(string input)
     {
@@ -87,7 +86,8 @@ public class Hacker : MonoBehaviour
             Debug.LogError("No Schmeckles for you!");
             break;
         }
-        Terminal.WriteLine("Please enter your password: "); 
+        Terminal.WriteLine("Enter your password or go back to 'Menu' if you're chicken...");
+        Terminal.WriteLine("hint: " + password.Anagram()); 
     }
     void CheckPassword(string input)    
     {
@@ -101,8 +101,8 @@ public class Hacker : MonoBehaviour
             }
         else 
             {
-                Terminal.WriteLine("Nice one, loser... ");
-                Terminal.WriteLine("No Schmeckles for you!");
+                Terminal.WriteLine("Nice one, loser... No Schmeckles for you! Try again: ");
+
             }
     }
     void DisplayWinScreen()
@@ -116,10 +116,47 @@ public class Hacker : MonoBehaviour
         switch (level)
         {
             case 1:
-             Terminal.WriteLine("Welcome President Jake!");
+             Terminal.WriteLine("Wooow! Wake up naked Jake!");
              Terminal.WriteLine("Here are ");
              Terminal.WriteLine(@"
-      _______________
+
+     :  *   10   *  :
+    : ~ Schmeckles ~ :
+           ...
+    ~  and a hatchet ~
+            .
+            .
+            .
+    go back to Manu and try lvl 2!
+           "
+            );
+            break;
+            case 2:
+             Terminal.WriteLine("Welcome Officer Jake!");
+             Terminal.WriteLine("Here are ");
+             Terminal.WriteLine(@"
+
+        .-'''''-.
+      .'  * * *  `.
+     :  *  100  *  :
+    : ~Schmecklezz~ :
+    : ~  $$$$$$$  ~ :
+     :  *  $$$  *  :
+      `.  * * *  .'
+        `-.....-'   
+    ~  and some ammo! ~
+            .
+            .
+            .
+    go back to Manu and try lvl 3!
+          "                        
+            );
+            break;
+            case 3:
+             Terminal.WriteLine("Welcome your Majesty, King Jake!");
+             Terminal.WriteLine("Here is you grand Pri$e!");
+             Terminal.WriteLine(@"
+     _______________
     |$$$$|     |$$$$|
     |$$$$|     |$$$$|
     |$$$$|     |$$$$|
@@ -129,15 +166,25 @@ public class Hacker : MonoBehaviour
            (O)
         .-'''''-.
       .'  * * *  `.
-     :  *   5    *  :
-    : ~ Shmeckles ~ :
+     :  1.000.000  :
+    : ~SCHMECKLES!~ :
     : ~  $$$$$$$  ~ :
      :  *  $$$  *  :
       `.  * * *  .'
-        `-.....-'                                           
-  "                        
-            );
-            break;
+        `-.....-'   
+        
+       ~ Victory! ~
+             .
+             .
+             .
+    Go back to Menu!
+
+        " 
+         );
+         break;
+         default: 
+         Debug.LogError("Invalid level reached!");
+         break;
         }
        
     }
